@@ -60,6 +60,13 @@ cover/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
+*.pot
+*.pyc
+__pycache__
+media
+
+# Backup files # 
+*.bak 
 
 # Flask stuff:
 instance/
@@ -139,4 +146,10 @@ cython_debug/
 
 # vs code config
 .vscode
+.vscode/* 
+!.vscode/settings.json 
+!.vscode/tasks.json 
+!.vscode/launch.json 
+!.vscode/extensions.json 
+.history
 .DS_Store
