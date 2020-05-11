@@ -17,4 +17,30 @@ export class ApiService {
       headers: this.httpHeaders
     });
   }
+
+  getOneSong(id): Observable<any> {
+    return this.http.get(`${this.baseurl}/songs/${id}/`, {
+      headers: this.httpHeaders
+    });
+  }
+
+  updateSong(song): Observable<any> {
+    const body = { name: song.name, artist: song.artist, year: song.year };
+    return this.http.put(`${this.baseurl}/songs/${song.id}/`, body, {
+      headers: this.httpHeaders
+    });
+  }
+
+  createSong(song): Observable<any> {
+    const body = { name: song.name, artist: song.artist, year: song.year };
+    return this.http.post(`${this.baseurl}/songs/`, body, {
+      headers: this.httpHeaders
+    });
+  }
+
+  deleteSong(id): Observable<any> {
+    return this.http.delete(`${this.baseurl}/songs/${id}/`, {
+      headers: this.httpHeaders
+    });
+  }
 }
